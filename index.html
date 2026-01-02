@@ -3,54 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOKSUN | AI</title>
+    <title>GOKSUN | Future</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #000; color: white; font-family: sans-serif; height: 100vh; overflow: hidden; }
-        
-        /* Görseli en alta, tam ekran ve en kesin yolla yerleştiriyoruz */
-        .bg-img {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; z-index: -1; opacity: 0.5;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #0b0e14; color: white; overflow-x: hidden; }
+
+        /* Modern Hero Alanı */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            text-align: center; padding: 20px;
         }
 
-        .content {
-            height: 100vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center;
+        .hero-content h1 { font-size: clamp(3rem, 10vw, 5rem); letter-spacing: 5px; margin-bottom: 10px; }
+        .hero-content p { font-size: 1.2rem; color: #a0aec0; margin-bottom: 30px; }
+
+        /* Servisler Alanı (Masaüstü yan yana, Mobil alt alta) */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; padding: 50px 10%;
+            background: #0b0e14;
         }
 
-        .box {
-            background: rgba(0, 0, 0, 0.6); padding: 40px 20px;
-            border-radius: 25px; border: 1px solid rgba(255,255,255,0.2);
-            width: 85%; max-width: 400px; backdrop-filter: blur(10px);
+        .service-card {
+            background: rgba(255,255,255,0.03); padding: 30px;
+            border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s; text-align: center;
         }
+        .service-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-10px); }
+        .service-card i { font-size: 2.5rem; color: #6366f1; margin-bottom: 15px; }
 
-        h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: 2px; }
-        .btn {
-            display: block; background: #fff; color: #000; padding: 15px;
-            margin: 20px 0; border-radius: 50px; text-decoration: none; font-weight: bold;
-        }
-        .socials { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
-        .socials a { color: #fff; font-size: 1.8rem; }
+        .footer-socials { padding: 40px; text-align: center; border-top: 1px solid #1a202c; }
+        .footer-socials a { color: white; font-size: 1.8rem; margin: 0 15px; opacity: 0.7; transition: 0.3s; }
+        .footer-socials a:hover { color: #6366f1; opacity: 1; }
     </style>
 </head>
 <body>
 
-    <img class="bg-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&auto=format&fit=crop" alt="background">
-
-    <div class="content">
-        <div class="box">
+    <section class="hero">
+        <div class="hero-content">
             <h1>GOKSUN</h1>
-            <p>Geleceğin Yapay Zeka Teknolojileri</p>
-            <a href="mailto:Goksun.info@gmail.com" class="btn">BİZE E-POSTA GÖNDER</a>
-            <div class="socials">
-                <a href="https://x.com/GoksunInfo"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
+            <p>Yapay Zeka ve Geleceğin Teknolojileri</p>
+            <a href="mailto:Goksun.info@gmail.com" style="background:#fff; color:#000; padding:15px 40px; border-radius:50px; text-decoration:none; font-weight:bold;">İletişime Geç</a>
         </div>
-    </div>
+    </section>
+
+    <section class="services">
+        <div class="service-card">
+            <i class="fas fa-brain"></i>
+            <h3>Yapay Zeka</h3>
+            <p>Verilerinizi anlamlandıran akıllı algoritmalar geliştiriyoruz.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-code"></i>
+            <h3>Yazılım</h3>
+            <p>Modern ve hızlı web çözümleri tasarlıyoruz.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-rocket"></i>
+            <h3>İnovasyon</h3>
+            <p>Geleceğin dünyasını bugünden inşa ediyoruz.</p>
+        </div>
+    </section>
+
+    <footer class="footer-socials">
+        <a href="https://x.com/GoksunInfo"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </footer>
 
 </body>
 </html>
