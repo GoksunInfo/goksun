@@ -3,80 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOKSUN | Future</title>
+    <title>GOKSUN | Future & Innovation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #0b0e14; color: white; overflow-x: hidden; }
+        :root { --primary: #0066ff; --dark: #1a1a1a; --light: #f8f9fa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', 'Segoe UI', sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
 
-        /* Modern Hero Alanı */
+        /* Üst Bilgi Alanı (Hero) */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            text-align: center; padding: 20px;
+            position: relative; height: 80vh; display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.2) 100%),
+                        url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover; background-position: center; text-align: center; padding: 20px;
         }
 
-        .hero-content h1 { font-size: clamp(3rem, 10vw, 5rem); letter-spacing: 5px; margin-bottom: 10px; }
-        .hero-content p { font-size: 1.2rem; color: #a0aec0; margin-bottom: 30px; }
+        .hero-text h1 { font-size: clamp(3.5rem, 12vw, 6rem); font-weight: 900; letter-spacing: -2px; color: var(--dark); line-height: 1; margin-bottom: 20px; }
+        .hero-text p { font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto 30px; }
 
-        /* Servisler Alanı (Masaüstü yan yana, Mobil alt alta) */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px; padding: 50px 10%;
-            background: #0b0e14;
+        /* Modern Buton */
+        .cta-button {
+            display: inline-block; background: var(--dark); color: white; padding: 18px 45px;
+            border-radius: 100px; text-decoration: none; font-weight: bold; transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .cta-button:hover { transform: scale(1.05); background: var(--primary); }
+
+        /* Hizmet Kartları Alanı */
+        .features {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; padding: 80px 10%; background: white;
         }
 
-        .service-card {
-            background: rgba(255,255,255,0.03); padding: 30px;
-            border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s; text-align: center;
+        .card {
+            padding: 40px; border-radius: 24px; background: var(--light);
+            border: 1px solid #eee; transition: 0.3s;
         }
-        .service-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-10px); }
-        .service-card i { font-size: 2.5rem; color: #6366f1; margin-bottom: 15px; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 15px; font-size: 1.5rem; }
 
-        .footer-socials { padding: 40px; text-align: center; border-top: 1px solid #1a202c; }
-        .footer-socials a { color: white; font-size: 1.8rem; margin: 0 15px; opacity: 0.7; transition: 0.3s; }
-        .footer-socials a:hover { color: #6366f1; opacity: 1; }
+        /* Alt Kısım ve Sosyal Medya */
+        footer { padding: 60px 20px; text-align: center; background: var(--light); border-top: 1px solid #eee; }
+        .social-icons { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; }
+        .social-icons a { color: var(--dark); font-size: 1.8rem; transition: 0.3s; }
+        .social-icons a:hover { color: var(--primary); transform: translateY(-5px); }
+
+        /* Mobil Düzenlemeler */
+        @media (max-width: 768px) {
+            .hero { height: 70vh; }
+            .features { padding: 40px 5%; }
+        }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <div class="hero-content">
+        <div class="hero-text">
             <h1>GOKSUN</h1>
-            <p>Yapay Zeka ve Geleceğin Teknolojileri</p>
-            <a href="mailto:Goksun.info@gmail.com" style="background:#fff; color:#000; padding:15px 40px; border-radius:50px; text-decoration:none; font-weight:bold;">İletişime Geç</a>
+            <p>Yapay zeka ve teknolojiyi estetikle buluşturuyoruz. Geleceği birlikte kodlayalım.</p>
+            <a href="mailto:Goksun.info@gmail.com" class="cta-button">Hemen Başla</a>
         </div>
     </section>
 
-    <section class="services">
-        <div class="service-card">
-            <i class="fas fa-brain"></i>
-            <h3>Yapay Zeka</h3>
-            <p>Verilerinizi anlamlandıran akıllı algoritmalar geliştiriyoruz.</p>
+    <section class="features">
+        <div class="card">
+            <i class="fas fa-microchip"></i>
+            <h3>Akıllı Çözümler</h3>
+            <p>İş süreçlerinizi yapay zeka ile optimize eden modern yazılım mimarileri.</p>
         </div>
-        <div class="service-card">
-            <i class="fas fa-code"></i>
-            <h3>Yazılım</h3>
-            <p>Modern ve hızlı web çözümleri tasarlıyoruz.</p>
+        <div class="card">
+            <i class="fas fa-layer-group"></i>
+            <h3>Kullanıcı Odaklı</h3>
+            <p>Hem mobilde hem masaüstünde kusursuz çalışan kullanıcı deneyimleri.</p>
         </div>
-        <div class="service-card">
-            <i class="fas fa-rocket"></i>
-            <h3>İnovasyon</h3>
-            <p>Geleceğin dünyasını bugünden inşa ediyoruz.</p>
+        <div class="card">
+            <i class="fas fa-bolt"></i>
+            <h3>Hızlı & Güçlü</h3>
+            <p>En son teknoloji yığınlarını kullanarak yüksek performanslı sistemler.</p>
         </div>
     </section>
 
-    <footer class="footer-socials">
-        <a href="https://x.com/GoksunInfo"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <footer>
+        <div class="social-icons">
+            <a href="https://x.com/GoksunInfo" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 GOKSUN Innovation. Tüm hakları saklıdır.</p>
     </footer>
 
 </body>
